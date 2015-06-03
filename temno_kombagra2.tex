@@ -49,40 +49,40 @@ Naopak proměnná je \textit{volná} v nějaké fli, má-li v ní volný výskyt
 \subsection{Axiomy teorie množin}
 
 \begin{enumerate}
-\item {\sc{axiom existence}} - "existuje množina"
+\item {\sc{axiom existence}} - ``existuje množina''
 \[
 	(\exists x) (x=x)
 \]
-\item {\sc{axiom extensionality}} - "množiny, obsahující tytéž prvky jsou si rovny"
+\item {\sc{axiom extensionality}} - ``množiny, obsahující tytéž prvky jsou si rovny''
 \[
 	(\forall u) (u\in x \Leftrightarrow u \in y) \implies (x=y)
 \]
-\item {\sc{schéma axiomů vydělení}} - "z každé množiny lze vydělit množinu prvků splňujících nějakou formuli"
+\item {\sc{schéma axiomů vydělení}} - ``z každé množiny lze vydělit množinu prvků splňujících nějakou formuli''
 
 Fle $\psi$ neobsahuje volnou proměnou $z$.
 \[
 	(\forall a) (\exists z) (\forall x) ((x\in z) \Leftrightarrow (x \in a \wedge \varphi(x)))
 \]
-\item {\sc{axiom dvojice}} - "libovolné dvě množiny určují dvouprvkouvou množinu"
+\item {\sc{axiom dvojice}} - ``libovolné dvě množiny určují dvouprvkouvou množinu''
 \[
 	(\forall a) (\forall b) (\exists z) (\forall x) ((x \in z) \Leftrightarrow (x=a) \vee (x=b))
 \]
-\item {\sc{axiom sumy}} - "ke každé množině existuje množina sestávající ze všech prvků jejích prvků"
+\item {\sc{axiom sumy}} - ``ke každé množině existuje množina sestávající ze všech prvků jejích prvků''
 \[
 	(\forall a) (\exists z) (\forall x) ((x \in z) \Leftrightarrow (\exists y) ((y \in a) \wedge (x \in y)))
 \]
-\item {\sc{axiom potence}} - "Ke každé množině existuje množina všech jejích podmnožin"
+\item {\sc{axiom potence}} - ``Ke každé množině existuje množina všech jejích podmnožin''
 \[
 	(\forall a) (\exists z) (\forall x) ((x \in z) \Leftrightarrow (x \subseteq a))
 \]
-\item {\sc{schéma axiomů nahrazení}} - "Definovatelné zobrazení zobrazuje množinu na množinu"
+\item {\sc{schéma axiomů nahrazení}} - ``Definovatelné zobrazení zobrazuje množinu na množinu''
 
 Formule $\psi$ neobsahuje volně proměnné $w$ a $z$
 \[
 	(\forall u) (\forall v) (\forall w) ((\psi(u,v) \wedge \psi(u,w)) \Rightarrow (v=w)) \implies
 	(\forall a) (\exists z) (\forall v) ((v\in z) \Leftrightarrow (\exists u) ((u \in a) \wedge \psi(u,v)))
 \]
-\item {\sc{axiom nekonečna}} - "Existuje nekonečná množina"
+\item {\sc{axiom nekonečna}} - ``Existuje nekonečná množina''
 \[
 	(\exists z) ((0 \in z) \wedge (\forall x) ((x \in z) \Rightarrow (x \cup \{x\} \in z)))
 \]
