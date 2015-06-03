@@ -242,7 +242,7 @@ Budeme jej značit $(\leftarrow , x)$.
 \end{define}
 
 \begin{theorem}\label{l1}
-Je-li $\langle a , r \rangle $ dobře uspořádaná množina, pak $\forall x \in a$ platí $\langle a , r \rangle $ není isomorfní s~$< (\leftarrow,x), r>$.
+Je-li $\langle a , r \rangle $ dobře uspořádaná množina, pak $\forall x \in a$ platí $\langle a , r \rangle $ není isomorfní s~$\langle (\leftarrow,x), r \rangle$.
 \end{theorem}
 
 \begin{proof}
@@ -265,21 +265,21 @@ Pak pokud $(f(y_0)\ s\ g(y_0))$ pak $g$ není surjektivní. Jinak $(g(y_0)\ s\ f
 Jsou-li $\langle a , r \rangle $ a $\langle b , s \rangle $ dvě dobře uspořádané množiny, pak nastane jedna z možností:
 \begin{enumerate}
 \item  $\langle a , r \rangle $ je izomorfní $\langle b , s \rangle $ 
-\item  $(\exists y \in b)\ \langle a , r \rangle  \ \cong \ < (\leftarrow , y),s >$ 
-\item  $(\exists x \in a)\ < (\leftarrow , x),r > \ \cong \ \langle b , s \rangle $ 
+\item  $(\exists y \in b)\ \langle a , r \rangle  \ \cong \ \langle (\leftarrow , y),s \rangle$ 
+\item  $(\exists x \in a)\ \langle (\leftarrow , x),r \rangle \ \cong \ \langle b , s \rangle $ 
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
 Položíme 
 \[
-	f = \{\langle v , w \rangle \ | \ v \in a\ \wedge \ w \in b\ \wedge \ (<(\leftarrow ,v), r> \ \cong \ < (\leftarrow , w),s >)
+	f = \{\langle v , w \rangle \ | \ v \in a\ \wedge \ w \in b\ \wedge \ (\langle (\leftarrow ,v), r\rangle \ \cong \ \langle (\leftarrow , w),s \rangle)
 \]
 Postupně ukážeme, že
 \begin{enumerate}
 \item $f$ je funkce	($\langle v , w \rangle  \in f$ a $<v,w_2> \in f$ pak 
 \[
-	<(\leftarrow , w), s>\ \cong \ <(\leftarrow , v), r> \ \cong \ <(\leftarrow , w), s>,
+	\langle(\leftarrow , w), s\rangle\ \cong \ \langle(\leftarrow , v), r\rangle \ \cong \ \langle(\leftarrow , w), s\rangle,
 \]
 což je spor s větou \ref{l1})
 \item $f$ je prostá (obdobně jako předchozí)
@@ -402,7 +402,7 @@ Pak $g$ nezobrazí žádný prvek na množinu $y = \{t\in x\  |\ t \notin g(t)\}
 \begin{define}
 (Kartézský součin souboru množin)
 
-Nechť $a$ je množina a $< x_t :\ t\in a>$ je soubor množin pak kartézský součin souboru $< x_t :\ t\in a>$ je
+Nechť $a$ je množina a $\langle  x_t :\ t\in a\rangle$ je soubor množin pak kartézský součin souboru $\langle x_t :\ t\in a\rangle$ je
 \[
 	\prod_{t \in a} x_t = \left\{f \left| \ \left(f:a \rightarrow \bigcup_{t \in a} x_t\right) \ 
 	\wedge \ \left(\forall t \in a\right) f(t) \in x_t \right. \right\} 
@@ -447,7 +447,7 @@ Následující tvrzení jsou ekvivalentní
 \item Axiom výběru
 \item Princip výběru
 \item Pro každou relaci $s$ ecistuje fce $f$ tž. $f \subseteq s$ a $D_f(f) = D_f(s)$
-\item Je-li $x$ neprádná a $<y_t : t \in x>$ soubor neprázdných množin pak jeho kartézský součin je neprázdný.
+\item Je-li $x$ neprádná a $\langle y_t : t \in x \rangle$ soubor neprázdných množin pak jeho kartézský součin je neprázdný.
 \end{enumerate}
 \end{theorem}
 
@@ -458,7 +458,7 @@ $((2)\rightarrow(3)):$ je-li $s$ prázdná je i $f$ prázdná jinak $f$ je výb�
 $\{ \{\langle u , v \rangle | \langle u , v \rangle  \in s\}\ |\ \forall u \in D_f(s) \}$
 
 $((3)\rightarrow(4)):$ definujeme relaci $s = \{\langle t , v \rangle  \ |\ (t\in x) \ \wedge\ (v \in y_t) \}$, dle $(3)$ existuje funkce $f$.
-Pak funkce $f$ patří do kartézkého součinu souboru $<y_t : t \in x>$.
+Pak funkce $f$ patří do kartézkého součinu souboru $\langle y_t : t \in x \rangle$.
 
 $((4)\rightarrow(1)):$ Buď $x$ neprázndná množina neobsahující prázdnou množinu, pak libovolná funkce $f$ z kartézského součinu na souboru $x$
 je selektorem na $x$.
