@@ -111,8 +111,8 @@ Binární relace je množina $r$ jejímiž prvky jsou uspořádané dvojice
 \begin{define}
 (Definiční obor, Obor hodnot)
 
-Pro relaci $r$ definujeme definiční obor $D_f = \{x: (\exists y) <x,y> \in r \}$
-a obdobně obor hodnot \\ $H_f = \{y: (\exists x) <x,y> \in r \}$.
+Pro relaci $r$ definujeme definiční obor $D_f = \{x: (\exists y) \langle x , y \rangle  \in r \}$
+a obdobně obor hodnot \\ $H_f = \{y: (\exists x) \langle x , y \rangle  \in r \}$.
 \end{define}
 
 \begin{define}
@@ -227,7 +227,7 @@ $\{1-\frac{1}{n}\ |\ n \in \mathbb{Z}^+\}$ je dobře uspořádaná množina
 \begin{define}
 (Izomorfismus uspořádaných množin)
 
-Jsou-li $a,b$ množiny, $r,s$ relace, pak $< a,r >$ je isomorfní $< b,s >$ pokud existuje bijekce $f: a \rightarrow b$ taková, že
+Jsou-li $a,b$ množiny, $r,s$ relace, pak $\langle a , r \rangle $ je isomorfní $\langle b , s \rangle $ pokud existuje bijekce $f: a \rightarrow b$ taková, že
 \[
 (x\ r\ y) \Leftrightarrow (f(x)\ s\ f(y))
 \]
@@ -242,7 +242,7 @@ Budeme jej značit $(\leftarrow , x)$.
 \end{define}
 
 \begin{theorem}\label{l1}
-Je-li $< a,r >$ dobře uspořádaná množina, pak $\forall x \in a$ platí $< a,r >$ není isomorfní s~$< (\leftarrow,x), r>$.
+Je-li $\langle a , r \rangle $ dobře uspořádaná množina, pak $\forall x \in a$ platí $\langle a , r \rangle $ není isomorfní s~$< (\leftarrow,x), r>$.
 \end{theorem}
 
 \begin{proof}
@@ -253,7 +253,7 @@ $(t\ r\ f(t))$ pak $f$ není surjektivní (na).
 \end{proof}
 
 \begin{theorem}\label{l2}
-Jsou-li $< a,r >$ a $< b,s >$ dvě dobře uspořádané množiny, pak mezi nimi existuje jedinný izomorfismus.
+Jsou-li $\langle a , r \rangle $ a $\langle b , s \rangle $ dvě dobře uspořádané množiny, pak mezi nimi existuje jedinný izomorfismus.
 \end{theorem}
 
 \begin{proof}
@@ -262,11 +262,11 @@ Pak pokud $(f(y_0)\ s\ g(y_0))$ pak $g$ není surjektivní. Jinak $(g(y_0)\ s\ f
 \end{proof}
 
 \begin{theorem}
-Jsou-li $< a,r >$ a $< b,s >$ dvě dobře uspořádané množiny, pak nastane jedna z možností:
+Jsou-li $\langle a , r \rangle $ a $\langle b , s \rangle $ dvě dobře uspořádané množiny, pak nastane jedna z možností:
 \begin{enumerate}
-\item  $< a,r >$ je izomorfní $< b,s >$ 
-\item  $(\exists y \in b)\ < a,r > \ \cong \ < (\leftarrow , y),s >$ 
-\item  $(\exists x \in a)\ < (\leftarrow , x),r > \ \cong \ < b,s >$ 
+\item  $\langle a , r \rangle $ je izomorfní $\langle b , s \rangle $ 
+\item  $(\exists y \in b)\ \langle a , r \rangle  \ \cong \ < (\leftarrow , y),s >$ 
+\item  $(\exists x \in a)\ < (\leftarrow , x),r > \ \cong \ \langle b , s \rangle $ 
 \end{enumerate}
 \end{theorem}
 
