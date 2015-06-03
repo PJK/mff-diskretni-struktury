@@ -118,13 +118,13 @@ a obdobně obor hodnot \\ $H_f = \{y: (\exists x) <x,y> \in r \}$.
 \begin{define}
 (Inverzní relace)
 
-Pro relaci $r$ definujeme inverzní relaci $r^{-1} = \{<y,x> | <x,y> \in r\}$.
+Pro relaci $r$ definujeme inverzní relaci $r^{-1} = \{\langle y , x \rangle  | \langle x , y \rangle  \in r\}$.
 \end{define}
 
 \begin{define}
 (Složení relací)
 
-Pro relace $r,s$ definujeme jejich složení $r\circ s = \{<x,z> | <x,y> \in r\ \wedge\ <y,z> \in s\}$.
+Pro relace $r,s$ definujeme jejich složení $r\circ s = \{\langle x , z \rangle  | \langle x , y \rangle  \in r\ \wedge\ \langle y , z \rangle  \in s\}$.
 \end{define}
 
 \begin{define}
@@ -132,7 +132,7 @@ Pro relace $r,s$ definujeme jejich složení $r\circ s = \{<x,z> | <x,y> \in r\ 
 
 Relaci $f$ nazveme funkce pokud platí následující
 \[
-	(\forall x \in D_f(f)) ((y\in H_f(f)) \ \wedge \ (y'\in H_f(f)) \ \wedge \ (<x,y> \in f)
+	(\forall x \in D_f(f)) ((y\in H_f(f)) \ \wedge \ (y'\in H_f(f)) \ \wedge \ (\langle x , y \rangle  \in f)
 	\ \wedge \ (<x,y'> \in f)) \implies (y=y')
 \]
 \end{define}
@@ -179,12 +179,12 @@ Z axiomů se dají dokázat následující vlastnosti:
 \begin{define}
 (Ostře uspořádaná množina)
 
-Ostře uspořádaná množina je uspořádaná dvojice $<a,r>$, kde $a$ je množina a $r\subseteq a \times a$ je relace splňující:
+Ostře uspořádaná množina je uspořádaná dvojice $\langle a , r \rangle $, kde $a$ je množina a $r\subseteq a \times a$ je relace splňující:
 \[
-((<x,y> \in r)\ \wedge\ (<y,z> \in r)) \Rightarrow \ <x,z> \in r
+((\langle x , y \rangle  \in r)\ \wedge\ (\langle y , z \rangle  \in r)) \Rightarrow \ \langle x , z \rangle  \in r
 \]
 \[
-(\forall x \in a)\ \neg (<x,x> \in r)
+(\forall x \in a)\ \neg (\langle x , x \rangle  \in r)
 \]
 \end{define}
 
@@ -237,7 +237,7 @@ Zobrazení $f$ nazýváme izomorfismus.
 \begin{define}
 (Počáteční úsek)
 
-Počáteční úsek množiny $<a,r>$ je podmnožina $\{ y\ |\ (y \in a) \wedge (y\ r\ x)\}$.
+Počáteční úsek množiny $\langle a , r \rangle $ je podmnožina $\{ y\ |\ (y \in a) \wedge (y\ r\ x)\}$.
 Budeme jej značit $(\leftarrow , x)$.
 \end{define}
 
@@ -273,11 +273,11 @@ Jsou-li $< a,r >$ a $< b,s >$ dvě dobře uspořádané množiny, pak nastane je
 \begin{proof}
 Položíme 
 \[
-	f = \{<v,w>\ | \ v \in a\ \wedge \ w \in b\ \wedge \ (<(\leftarrow ,v), r> \ \cong \ < (\leftarrow , w),s >)
+	f = \{\langle v , w \rangle \ | \ v \in a\ \wedge \ w \in b\ \wedge \ (<(\leftarrow ,v), r> \ \cong \ < (\leftarrow , w),s >)
 \]
 Postupně ukážeme, že
 \begin{enumerate}
-\item $f$ je funkce	($<v,w> \in f$ a $<v,w_2> \in f$ pak 
+\item $f$ je funkce	($\langle v , w \rangle  \in f$ a $<v,w_2> \in f$ pak 
 \[
 	<(\leftarrow , w), s>\ \cong \ <(\leftarrow , v), r> \ \cong \ <(\leftarrow , w), s>,
 \]
@@ -285,8 +285,8 @@ což je spor s větou \ref{l1})
 \item $f$ je prostá (obdobně jako předchozí)
 \item $f$ zachovává uspořádání (díky větě \ref{l2}, protože $f$ je izomorfismus počátečních úseků)
 \item prázdnost alespoň jedné z množin
-$ m = \{v \in a | (\forall w \in b) \ <v,w> \notin f\}$
-a \\$o = \{w \in b | (\forall v \in a) \ <v,w> \notin f\}$
+$ m = \{v \in a | (\forall w \in b) \ \langle v , w \rangle  \notin f\}$
+a \\$o = \{w \in b | (\forall v \in a) \ \langle v , w \rangle  \notin f\}$
 (jsou-li obě neprázdné tvoří $f$ izomorfismus mezi jejich nejmenšími prvky)
 \end{enumerate}
 \end{proof}
@@ -455,9 +455,9 @@ Následující tvrzení jsou ekvivalentní
 $((1)\rightarrow(2)):$ $f$ selektor, pak $H_f(f)$ je výběrová množina
 
 $((2)\rightarrow(3)):$ je-li $s$ prázdná je i $f$ prázdná jinak $f$ je výběrová množina pro soubor množin
-$\{ \{<u,v>| <u,v> \in s\}\ |\ \forall u \in D_f(s) \}$
+$\{ \{\langle u , v \rangle | \langle u , v \rangle  \in s\}\ |\ \forall u \in D_f(s) \}$
 
-$((3)\rightarrow(4)):$ definujeme relaci $s = \{<t,v> \ |\ (t\in x) \ \wedge\ (v \in y_t) \}$, dle $(3)$ existuje funkce $f$.
+$((3)\rightarrow(4)):$ definujeme relaci $s = \{\langle t , v \rangle  \ |\ (t\in x) \ \wedge\ (v \in y_t) \}$, dle $(3)$ existuje funkce $f$.
 Pak funkce $f$ patří do kartézkého součinu souboru $<y_t : t \in x>$.
 
 $((4)\rightarrow(1)):$ Buď $x$ neprázndná množina neobsahující prázdnou množinu, pak libovolná funkce $f$ z kartézského součinu na souboru $x$
