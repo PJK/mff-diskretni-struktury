@@ -791,21 +791,51 @@ Pak dostáváme
 
 \section{Samoopravné kódy}
 
-Máme kód nad $\mathbb{Z}_2$.
+Máme kód nad $\mathbb{Z}_2$ a snažíme se přenášet zprávy nad kanálem s šumem. Cílem je navrhnout kódování, které (vzhledem k chybovosti kanálu) umožní korektně dekódovat poškozené zprávy.
 
 \begin{example}
-Trojitý opakovací kód $0 \rightarrow 000$ a $1 \rightarrow 111$
-Kontrola parity $(x_1,x_2,x_3) \in \mathbb{Z}_2^3 \rightarrow (x_1,x_2,x_3,x_1+x_2+x_3)$
+Trojitý opakovací kód $0 \rightarrow 000$ a $1 \rightarrow 111$. Všimněte si, že narozdíl od zdvojení umíme na každém úseku opravit jednu chybu.
+\end{example}
+
+\begin{example}
+Kontrola parity $(x_1,x_2,x_3) \in \mathbb{Z}_2^3 \rightarrow (x_1,x_2,x_3,x_1+x_2+x_3)$ -- umožní detekovat (nikoliv opravit) některé chyby. Protože i parity bit může být přenesen špatně, místo chyby není detekovatelné, uvažme $(1, 1, 1, 0)$ -- je špatně parity bit, některé $x$, nebo např. dvě $x$ a parity bit?.
 \end{example}
 
 \begin{define}
+Buď $\mathcal{C}$ jazyk (množina slov stejné délky\footnote{To není nezbytně nutné a často to tak není, ale ušetří to technikálie.}) nad $\mathbb{Z}_2$. Definujeme
 
-Hammingova váha slova - počet jedniček, které obsahuje
+Hammingova váha slova: $\textup{w}: \mathcal{C} \rightarrow \mathbb{N}_0$ počet jedniček, které obsahuje
 
-Hammingova vzdálenost slov - počet pozic, ve kterých se daná slova liší. Je korektní metrikou v prostoru slov.
+Hammingova vzdálenost slov: $\textup{d}: \mathcal{C}\times\mathcal{C} \rightarrow \mathbb{N}_0$ počet pozic, ve kterých se daná slova liší. Je korektní metrikou v prostoru slov. Platí $\textup{d}(u, v) = \textup{w}(u - v)$.
+
+Nejbližší slovo k $a$: $b \in \mathcal{C}: \forall c \in \mathcal{C}: \textup{d}(a, c) \geq \textup{d}(a, b)$
+
+Spolehlivost kanálu: pst $p \in [0,1]$ korektního přenesení bitu (cifry). Předpokládáme IID výskyt.
 \end{define}
 
-TODO chybí samoopravné kódy
+Pokud chceme být schopní opravit až $t$ chyb na slovo, nesmí v pro žádné slovo v kouli se středem v daném slově o poloměru $2t$ ležet žádné jiné slovo (vzdálenost každých dvou slov je $> 2t$).
+
+
+\begin{define}
+(Hammingův (také $(7, 4, 3)$) kód)
+
+Hammingův je kód obsahující slova délky 7 s 4 bity informace a 3 kontrolními bity. Ve slově $a = (a_0, \cdots, a_6)$ mají kontrolní bity $a_0, a_1, a_3$ hodnoty
+\begin{align*}
+a_0 = a_2 + a_4 + a_6 \\
+a_1 = a_2 + a_5 + a_6 \\
+a_3 = a_4 + a_5 + a_6
+\end{align*}
+\end{define}
+
+Všechna korektní kódová $a$ slova jsou tedy řešením homogenní soustavy
+\begin{align*}
+\begin{pmatrix}
+1  & 0   & 1 &  0 &  1 &  0 &  1 \\
+0  & 1  & 1  & 0  & 0  & 1  & 1 \\
+0  & 0 &  0  & 1  & 1  & 1  & 1
+\end{pmatrix}a=0
+\end{align*}
+
 \medskip
 
 \section{Pravděpodobnostní metoda - příklady použití}
