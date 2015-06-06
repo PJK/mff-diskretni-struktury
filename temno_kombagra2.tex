@@ -13,6 +13,9 @@
 \newtheorem*{notation}{Značení}
 \newtheorem*{example}{Příklad}
 \newtheorem*{remark}{Poznámka}
+\newtheorem*{observ}{Pozorování}
+\newtheorem*{lemma}{Lemma}
+
 
 \begin{document} \pagestyle{empty}
 \begin{center}
@@ -790,6 +793,7 @@ Pak dostáváme
 \medskip
 
 \section{Samoopravné kódy}
+TODO: sjednotit moje a petrovo
 
 Máme kód nad $\mathbb{Z}_2$ a snažíme se přenášet zprávy nad kanálem s šumem. Cílem je navrhnout kódování, které (vzhledem k chybovosti kanálu) umožní korektně dekódovat poškozené zprávy.
 
@@ -835,6 +839,91 @@ Všechna korektní kódová $a$ slova jsou tedy řešením homogenní soustavy
 0  & 0 &  0  & 1  & 1  & 1  & 1
 \end{pmatrix}a=0
 \end{align*}
+
+\begin{define}
+Kód nad $\mathbb{Z}^n_2$ je množina $C \subseteq \mathbb{Z}^n_2$.
+\end{define}
+
+\begin{define}
+Vzdálenost kódu $C$ je $\Delta C := \min\limits_{x \neq y \in C} d(x,y)$; pro nějakou metriku $d$.
+\end{define}
+
+\begin{define}
+$(n,k,d)$-kód je kód $C \subseteq \mathbb{Z}^n_2$ (tj. délka slov) takový, že $|C| = 2^k$ (tj. počet slov v kódu) a $d = \Delta C$.
+\end{define}
+
+\begin{define}
+Kódování pro $(n,k,d)$-kód je bijekce $\mathbb{Z}^n_2 \rightarrow C$.
+\end{define}
+
+TODO: opravdu bijekce???
+
+\begin{define}
+Dekódování pro $(n,k,d)$-kód je zobrazení $g: \mathbb{Z}^n_2 \rightarrow C$ taková, že
+$$
+(\forall x \in \mathbb{Z}^n_2)\quad d(x,g(x)) = \min\limits_{y \in C} d(x,y)
+$$
+\end{define}
+
+\begin{define}
+Kód $C$ opravuje $t$-násobné chyby pokud pro libovolné $x \in \mathbb{Z}^n_2$ existuje nejvýše jeden $y \in C$ takový, že $d(x,y) \leq t$.
+\end{define}
+
+\begin{observ}
+$(n,k,d)$-kód opravuje $t$-násobné chyby právě když $d \geq 2t+1$.
+\end{observ}
+
+\begin{define}
+Lineární kód je vektorový podprostor $\mathbb{Z}^n_2$.
+\end{define}
+
+Příklady lin. kódů: $\{000,111\}$, slova sudé váhy.
+
+Příklady nelin. kódů: slova liché váhy.
+
+\begin{define}
+Generující matice lineárního $(n,k,d)$-kódu $C$ je matice $G$ tvaru $k \times n$, jejíž řádky jsou báze $C$.
+\end{define}
+
+\begin{observ}
+Pokud je $G$ generující matice lin. kódu $C$, tak zobrazení $f: \mathbb{Z}^k_2 \rightarrow \mathbb{Z}^n_2$ definované jako $f(x) := x.G$ je kódování pro $C$.
+\end{observ}
+
+\begin{lemma}
+Pro lin. kód $C$ platí: tak zobrazení $\Delta C = \min\limits_{x \in C \setminus \{0\}} ||x||$.
+\end{lemma}
+
+\begin{define}
+Kontrolní matice lineárního $(n,k,d)$-kódu $C$ je matice $K \in C^{n-k \times k}$, jejíž řádky jsou báze $C^\bot$.
+\end{define}
+
+\begin{lemma}
+Pro lin. $(n,k,d)$-kód $C$ a jeho kontrolní matici $K$ platí: $x \in C \Longleftrightarrow K.x^T = 0$.
+\end{lemma}
+
+\begin{lemma}
+Kód $C$ obsahuje slovo váhy $t$ právě když $K$ obsahuje $t$ sloupců jejichž součet (po složkách) je nula (sčítáme nad $\mathbb{Z}^{n-k}_2$).
+\end{lemma}
+
+\begin{lemma}
+$\Delta C = d$ právě když $K$ má $d$ sloupců, které se sečtou na nulu, ale každých nejvýše $d-1$ řádků se na nulu nesečte.
+\end{lemma}
+
+\begin{lemma}
+Když $K$ má nenulové a různé sloupce, tak $\Delta C \geq 3$.
+\end{lemma}
+
+\begin{define}
+Hammingův kód $\mathbb{H}_m$ je kód, jehož kontrolní matice $K$ má $m$ řádků a $2^m-1$ sloupců, přičemž sloupce jsou všechny různé vektory z $\mathbb{Z}^{m}_2 \setminus \{0\}$
+\end{define}
+
+\begin{observ}
+$\mathbb{H}_m$ je $(n,k,d)$-kód, kde $n=2^m-1$; $\quad k=2^m-1-m$; $\quad d=3$.
+\end{observ}
+
+\begin{lemma}
+Nechť $\mathbb{H}_m$ je Hammingův kód, $K$ jeho kontr. matice. Označme $n := 2^m-1$. Potom pro každé slovo $x \in \mathbb{Z}^{n}_2$ existuje právě jedno $y \in \mathbb{H}_m$ takové, že $d(x,y) \leq 1$.
+\end{lemma}
 
 \medskip
 
