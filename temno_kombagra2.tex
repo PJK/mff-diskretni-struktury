@@ -101,7 +101,7 @@ Formule $\psi$ neobsahuje volně proměnné $w$ a $z$
 
 \item Symboly $\subseteq,\ 0,\ \cup,\ \cap,\ \{x\}$ nejsou v základním jazyce teorie množin, jedná se o zkratky
 
-\item (add Schéma axiomů vydělení) $z$ nesmí být volně ve $\phi$ protože po dosazení fle $\phi(x) = x \notin z$ je axiom sporný.
+\item (ad Schéma axiomů vydělení) $z$ nesmí být volně ve $\phi$ protože po dosazení fle $\phi(x) = x \notin z$ je axiom sporný.
 		(Podobně i u schéma axiomů nahrazení zakazujeme volné výskyty $w$ a $z$)
 \end{itemize}
 
@@ -449,7 +449,7 @@ Následující tvrzení jsou ekvivalentní
 \begin{enumerate}
 \item Axiom výběru
 \item Princip výběru
-\item Pro každou relaci $s$ ecistuje fce $f$ tž. $f \subseteq s$ a $D_f(f) = D_f(s)$
+\item Pro každou relaci $s$ existuje fce $f$ tž. $f \subseteq s$ a $D_f(f) = D_f(s)$
 \item Je-li $x$ neprádná a $\langle y_t : t \in x \rangle$ soubor neprázdných množin pak jeho kartézský součin je neprázdný.
 \end{enumerate}
 \end{theorem}
@@ -713,6 +713,10 @@ Alespoň jedna má správnou velikost ($R(n_1-1,n_2)$ nebo $R(n_1-1,n_2)$) a z i
 Pokud má o jedna menší, přidáme $v$.
 \end{proof}
 
+\begin{remark}
+$R$ nazýváme Ramseyho číslem. Platí $R(r, s) \leq \binom{r+s-2}{r-1}$.
+\end{remark}
+
 \begin{theorem}
 (Ramseova věta - vícebarevná verze)
 
@@ -734,6 +738,10 @@ Z indukce nalezneme jednobarevnou kliku velikosti $n$.
 
 $\forall p,b \in \mathbb{N}$ $\forall f:\binom{\mathbb N}{p} \rightarrow B$ existuje nekonečná homogenní množina $X \subseteq \mathbb{N}$.
 \end{theorem}
+
+\begin{remark}
+Jinými slovy: existuje nekonečná podmna $X$ taková, že každá funkce $f$ je na $\binom{X}{p}$ konstantní.
+\end{remark}
 
 \begin{proof}
 Indukcí dle $p$, pro $p=1$ jednoduché.
@@ -765,7 +773,7 @@ $f_k(n)$ značí největší počet hran $k$ uniformního hypergrafu takový, ž
 \begin{theorem}
 (Erd\H{o}s-Ko-Radoova věta)
 
-Pro $n\geq 2k$: $f_k(n) = \binom{n-1}{k-1}$.
+Pro $n\geq 2k$: $f_k(n) \leq \binom{n-1}{k-1}$.
 \end{theorem}
 
 TODO: tenhle důkaz doprojít dovysvětlit..
